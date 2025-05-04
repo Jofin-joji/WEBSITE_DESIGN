@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kallarackal Family Trust</title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts (Montserrat & Lato) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome (ensure you have a valid Kit URL or use downloaded icons) -->
+    <!-- Replace YOUR_KIT_CODE with your actual Font Awesome Kit code -->
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+    <!-- Alternatively, link to the CSS if using the free CDN -->
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> -->
+
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="navbar">
+            <div class="nav-brand">
+                <a href="#">KALLARACKAL FAMILY TRUST</a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#trust-details">Trust Details</a></li>
+                <li><a href="#highlights">Highlights</a></li>
+                <li><a href="#officials">Officials</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <!-- Add other relevant links like Contact if needed -->
+                <!-- <li><a href="#contact">Contact</a></li> -->
+            </ul>
+            <div class="nav-extra">
+                 <button id="darkModeToggle" aria-label="Toggle Dark Mode" aria-pressed="false">
+                    <!-- Sun Icon (Visible in Dark Mode) -->
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.106a.75.75 0 0 1 1.06-1.06l1.591 1.591a.75.75 0 1 1-1.06 1.06l-1.591-1.591ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5h2.25a.75.75 0 0 1 .75.75ZM17.894 17.894a.75.75 0 0 1-1.06 1.06l-1.591-1.591a.75.75 0 1 1 1.06-1.06l1.591 1.591ZM12 18.75a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25a.75.75 0 0 1 .75-.75ZM5.106 17.894a.75.75 0 0 1 1.06 1.06l-1.591 1.591a.75.75 0 1 1-1.06-1.06l1.591-1.591ZM2.25 12a.75.75 0 0 1 .75-.75h2.25a.75.75 0 0 1 0 1.5H3a.75.75 0 0 1-.75-.75ZM6.106 5.106a.75.75 0 0 1 1.06-1.06l1.591 1.591a.75.75 0 1 1-1.06 1.06L6.106 5.106Z"/></svg>
+                    <!-- Moon Icon (Visible in Light Mode) -->
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24"><path fill-rule="evenodd" d="M9.528 1.718a.75.75 0 0 1 .162.819A8.97 8.97 0 0 0 9 6a9 9 0 0 0 9 9 8.97 8.97 0 0 0 3.463-.69a.75.75 0 0 1 .981.981A10.503 10.503 0 0 1 18 19.5a10.5 10.5 0 0 1-10.5-10.5A10.503 10.503 0 0 1 9.528 1.718Z" clip-rule="evenodd"/></svg>
+                 </button>
+                 <button class="mobile-nav-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">☰</button> <!-- Hamburger Icon -->
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Slider Section -->
+        <section id="hero-slider" class="hero-slider">
+            <!-- Add 'active' class to the first slide -->
+            <div class="slide active">
+                 <!-- *** REPLACE with your actual image path *** -->
+                <img src="images/slider-1.jpg" alt="Trust Activity 1 - Empowering Communities">
+                <div class="slide-caption">Empowering Communities</div>
+            </div>
+            <div class="slide">
+                 <!-- *** REPLACE with your actual image path *** -->
+                <img src="images/slider-2.jpg" alt="Trust Activity 2 - Supporting Education">
+                <div class="slide-caption">Supporting Education</div>
+            </div>
+            <div class="slide">
+                 <!-- *** REPLACE with your actual image path *** -->
+                <img src="images/slider-3.jpg" alt="Trust Activity 3 - Building Futures Together">
+                <div class="slide-caption">Building Futures Together</div>
+            </div>
+            <!-- Add more slides as needed, ensure images exist -->
+            <!--
+            <div class="slide">
+                <img src="images/slider-4.jpg" alt="Trust Activity 4 - Healthcare Initiatives">
+                <div class="slide-caption">Healthcare Initiatives</div>
+            </div>
+            -->
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="content-section">
+            <div class="container">
+                <!-- Add initial animation class -->
+                <h2 class="reveal-bottom-initial">About Kallarackal Family Trust</h2>
+                <div class="about-content-grid">
+                    <!-- Add initial animation class -->
+                    <div class="about-text reveal-left-initial">
+                        <!-- *** REPLACE with your actual content *** -->
+                        <p>Welcome to the Kallarackal Family Trust website. Our trust is dedicated to fostering community well-being through impactful initiatives in education, healthcare, and sustainable development. Founded on the principles of compassion, integrity, and service, we strive to make a meaningful and lasting difference in the lives of others.</p>
+                        <p>Established by the Kallarackal family, the trust carries forward a legacy of philanthropy and commitment to social responsibility. Discover our history, the core values that guide our work, and our vision for a brighter future for the communities we serve.</p>
+                        <!-- Add more details about history, vision, values if needed -->
+                    </div>
+                     <!-- Add initial animation class -->
+                    <div class="about-video reveal-right-initial">
+                        <!--
+                            IMPORTANT:
+                            1. Create a 'videos' folder in your project directory.
+                            2. Place your animated logo file (e.g., 'kft-logo-animation.mp4') inside it.
+                            3. Replace 'videos/kft-logo-animation.mp4' below with the correct path.
+                            4. Ensure the video format is web-friendly (MP4/WebM).
+                            5. Keep the video file size reasonably small for faster loading.
+                        -->
+                        <video width="100%" height="auto" autoplay loop muted playsinline>
+                             <!-- *** REPLACE with your actual video path *** -->
+                            <source src="videos/kft-logo-animation.mp4" type="video/mp4">
+                            <!-- Optional: <source src="videos/kft-logo-animation.webm" type="video/webm"> -->
+                            Your browser does not support the video tag. An animation representing the Kallarackal Family Trust logo should be playing here.
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Trust Details Section -->
+        <section id="trust-details" class="content-section section-alt">
+             <div class="container">
+                 <!-- Add initial animation class -->
+                <h2 class="reveal-bottom-initial">How the Trust Works</h2>
+                 <!-- Add initial animation class + stagger delay -->
+                <!-- *** REPLACE with your actual content *** -->
+                <p class="reveal-bottom-initial" style="transition-delay: 0.1s;">The Kallarackal Family Trust operates through a structured approach to identify needs and implement effective programs. Our process involves rigorous assessment, community consultations, strategic partnerships, and transparent project management to ensure maximum impact and accountability.</p>
+                <p class="reveal-bottom-initial" style="transition-delay: 0.2s;">Funds are allocated based on thorough evaluations, focusing on projects that align with our core mission, demonstrate potential for sustainable change, and address critical community needs. We are committed to ethical governance and responsible stewardship of resources.</p>
+                <!-- Add more details about governance, funding, application process if any -->
+            </div>
+        </section>
+
+        <!-- Highlights Section -->
+        <section id="highlights" class="content-section">
+            <div class="container">
+                 <!-- Add initial animation class -->
+                <h2 class="reveal-bottom-initial">Highlights & Programs</h2>
+                <!-- Grid ID for JS staggering -->
+                <div class="highlights-grid" id="highlightsGrid">
+                    <!-- Grid items will be animated via JS stagger based on section visibility -->
+                    <!-- No reveal-* class needed on items themselves -->
+                    <div class="highlight-item">
+                         <!-- *** REPLACE with your actual image path *** -->
+                        <img src="images/program-scholarship.jpg" alt="Scholarship Program Highlight">
+                        <div class="highlight-overlay">
+                            <!-- *** REPLACE with your actual content *** -->
+                            <h3>Scholarship Program</h3>
+                            <p>Empowering bright students from underprivileged backgrounds to achieve their academic dreams.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                         <!-- *** REPLACE with your actual image path *** -->
+                        <img src="images/program-healthcare.jpg" alt="Healthcare Camp Highlight">
+                         <div class="highlight-overlay">
+                             <!-- *** REPLACE with your actual content *** -->
+                            <h3>Rural Healthcare Camp</h3>
+                            <p>Providing essential medical check-ups and services to remote and underserved communities.</p>
+                        </div>
+                    </div>
+                    <div class="highlight-item">
+                         <!-- *** REPLACE with your actual image path *** -->
+                        <img src="images/program-community.jpg" alt="Community Center Highlight">
+                         <div class="highlight-overlay">
+                             <!-- *** REPLACE with your actual content *** -->
+                            <h3>Community Skill Center</h3>
+                            <p>A hub for local activities, vocational training, and fostering community engagement.</p>
+                        </div>
+                    </div>
+                     <!-- Add more highlight items as needed -->
+                </div>
+            </div>
+        </section>
+        <!-- ... previous section ends (Highlights) ... -->
+    </section>
+
+    <!-- NEW: Guardian Section -->
+    <section id="guardian" class="content-section section-alt">
+        <div class="container">
+            <h2 class="reveal-bottom-initial">Our Guardian</h2> 
+            <div class="guardian-content-grid">
+                <div class="guardian-image reveal-left-initial">
+                    <!-- *** REPLACE with actual image path and alt text *** -->
+                    <img src="images/guardian-photo.jpg" alt="[Guardian's Name], Guardian of the Trust">
+                </div>
+                <div class="guardian-text reveal-right-initial"> 
+                     <!-- *** REPLACE with actual Name and Title *** -->
+                    <h3>Mr./Ms./Dr. [Guardian's Full Name]</h3>
+                    <h4>[Guardian's Title, e.g., Patron, Chief Mentor]</h4>
+                    <!-- *** REPLACE with actual Description *** -->
+                    <p>With profound wisdom and unwavering dedication, [Guardian's Name] serves as the guiding light for the Kallarackal Family Trust. Their lifelong commitment to [mention key areas like philanthropy, community service, ethical values] has been instrumental in shaping the Trust's mission and ensuring its enduring legacy.</p>
+                    <p>[Add another paragraph describing their role, vision, or contribution to the trust...]</p>
+                    <!-- Optional: Add a prominent quote -->
+                    <blockquote>
+                        <p>"[Insert a significant quote from the Guardian about the trust's purpose or values...]"</p>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- NEW SECTION ENDS -->
+
+
+        <!-- Officials Section -->
+        <section id="officials" class="content-section section-alt">
+            <div class="container">
+                 <!-- Add initial animation class -->
+                <h2 class="reveal-bottom-initial">Our Officials</h2>
+                 <!-- Grid ID for JS staggering -->
+                <div class="officials-grid" id="officialsGrid">
+                    <!-- Add initial animation class to each card for staggering -->
+                    <div class="official-card reveal-scale-initial">
+                         <!-- *** REPLACE image path, name, designation, quote *** -->
+                        <img src="images/official-1.jpg" alt="[Official 1 Name]">
+                        <h3>Mr./Ms. [Official 1 Full Name]</h3>
+                        <h4>[Designation, e.g., Chairman]</h4>
+                        <p>"[Insert a brief, impactful quote from Official 1 about the trust's vision or their role...]"</p>
+                    </div>
+                    <div class="official-card reveal-scale-initial">
+                         <!-- *** REPLACE image path, name, designation, quote *** -->
+                        <img src="images/official-2.jpg" alt="[Official 2 Name]">
+                        <h3>Mr./Ms. [Official 2 Full Name]</h3>
+                        <h4>[Designation, e.g., Secretary]</h4>
+                        <p>"[Insert a brief, impactful quote from Official 2...]"</p>
+                    </div>
+                    <div class="official-card reveal-scale-initial">
+                         <!-- *** REPLACE image path, name, designation, quote *** -->
+                        <img src="images/official-3.jpg" alt="[Official 3 Name]">
+                        <h3>Mr./Ms./Dr. [Official 3 Full Name]</h3>
+                        <h4>[Designation, e.g., Treasurer]</h4>
+                        <p>"[Insert a brief, impactful quote from Official 3...]"</p>
+                    </div>
+                    <div class="official-card reveal-scale-initial">
+                         <!-- *** REPLACE image path, name, designation, quote *** -->
+                        <img src="images/official-4.jpg" alt="[Official 4 Name]">
+                        <h3>Mr./Ms. [Official 4 Full Name]</h3>
+                        <h4>[Designation, e.g., Trustee]</h4>
+                        <p>"[Insert a brief, impactful quote from Official 4...]"</p>
+                    </div>
+                     <div class="official-card reveal-scale-initial">
+                          <!-- *** REPLACE image path, name, designation, quote *** -->
+                        <img src="images/official-5.jpg" alt="[Official 5 Name]">
+                        <h3>Mr./Ms. [Official 5 Full Name]</h3>
+                        <h4>[Designation, e.g., Trustee]</h4>
+                        <p>"[Insert a brief, impactful quote from Official 5...]"</p>
+                    </div>
+                     <div class="official-card reveal-scale-initial">
+                          <!-- *** REPLACE image path, name, designation, quote *** -->
+                        <img src="images/official-6.jpg" alt="[Official 6 Name]">
+                        <h3>Mr./Ms./Adv. [Official 6 Full Name]</h3>
+                        <h4>[Designation, e.g., Trustee / Advisor]</h4>
+                        <p>"[Insert a brief, impactful quote from Official 6...]"</p>
+                    </div>
+                    <!-- Repeat structure for all 6 officials -->
+                </div>
+            </div>
+        </section>
+
+        <!-- ... previous section ends (Officials/Guardian) ... -->
+    </section>
+
+    <!-- NEW Gallery Section -->
+    <section id="gallery" class="content-section">
+        <div class="container full-width-container"> 
+            <h2 class="reveal-bottom-initial">Gallery Showcase</h2>
+
+            <div class="scrolling-gallery-wrapper">
+                <!-- Row 1 (Scrolls Left) -->
+                <div class="gallery-scroll-row reveal-fade-initial">
+                    <div class="gallery-row-inner">
+                        <!-- Images for Row 1 - These will be duplicated by JS -->
+                        <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-1.jpeg" alt="Gallery Image 1: Description">
+                        </div>
+                        <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-2.jpg" alt="Gallery Image 2: Description">
+                        </div>
+                        <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-3.jpg" alt="Gallery Image 3: Description">
+                        </div>
+                        <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-4.jpg" alt="Gallery Image 4: Description">
+                        </div>
+                         <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-extra-1.jpg" alt="Gallery Image Extra 1: Description">
+                        </div>
+                         <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-extra-2.jpg" alt="Gallery Image Extra 2: Description">
+                        </div>
+                        <!-- Add more unique images for row 1 as needed -->
+                    </div>
+                </div>
+
+                <!-- Row 2 (Scrolls Right) -->
+                <div class="gallery-scroll-row reveal-fade-initial" style="transition-delay: 0.1s;">
+                     
+                    <div class="gallery-row-inner reverse-scroll">
+                        <!-- Images for Row 2 - These will be duplicated by JS -->
+                         <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-5.jpg" alt="Gallery Image 5: Description">
+                        </div>
+                         <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-6.jpg" alt="Gallery Image 6: Description">
+                        </div>
+                         <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-7.jpg" alt="Gallery Image 7: Description">
+                        </div>
+                         <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-8.jpg" alt="Gallery Image 8: Description">
+                        </div>
+                        <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-extra-3.jpg" alt="Gallery Image Extra 3: Description">
+                        </div>
+                        <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-extra-4.jpg" alt="Gallery Image Extra 4: Description">
+                        </div>
+                         <!-- Add more unique images for row 2 as needed -->
+                    </div>
+                </div>
+
+                 <!-- Row 3 (Scrolls Left) -->
+                <div class="gallery-scroll-row reveal-fade-initial" style="transition-delay: 0.2s;">
+                    <div class="gallery-row-inner">
+                        <!-- Images for Row 3 - These will be duplicated by JS -->
+                         <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-extra-5.jpg" alt="Gallery Image Extra 5: Description">
+                        </div>
+                         <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-extra-6.jpg" alt="Gallery Image Extra 6: Description">
+                        </div>
+                         <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-extra-7.jpg" alt="Gallery Image Extra 7: Description">
+                        </div>
+                         <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-extra-8.jpg" alt="Gallery Image Extra 8: Description">
+                        </div>
+                         <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-9.jpg" alt="Gallery Image 9: Description">
+                        </div>
+                         <div class="gallery-scroll-item">
+                            <img src="images/gallery/gallery-10.jpg" alt="Gallery Image 10: Description">
+                        </div>
+                         <!-- Add more unique images for row 3 as needed -->
+                    </div>
+                </div>
+                  <!-- Add more rows as desired -->
+
+            </div> 
+        </div>
+    </section>
+    <!-- END NEW Gallery Section -->
+
+
+    <!-- ... Footer starts here ... -->
+
+        <!-- Optional Contact Section Placeholder -->
+        <!--
+        <section id="contact" class="content-section section-alt">
+            <div class="container">
+                <h2 class="reveal-bottom-initial">Contact Us</h2>
+                <p class="reveal-bottom-initial" style="transition-delay: 0.1s;">We'd love to hear from you. Reach out with inquiries or collaboration ideas.</p>
+                [Contact Form or detailed contact info could go here]
+            </div>
+        </section>
+        -->
+
+    </main>
+
+    <footer class="site-footer-bottom">
+        <div class="container">
+            <div class="footer-grid">
+
+                <!-- Column 1: About/Brand Info -->
+                <div class="footer-column footer-about">
+                    <h4>Kallarackal Family Trust</h4>
+                     <!-- *** REPLACE with your actual summary *** -->
+                    <p>Dedicated to fostering community well-being through education, support, and development initiatives.</p>
+                </div>
+
+                <!-- Column 2: Contact Info -->
+                <div class="footer-column footer-contact">
+                    <h4>Get In Touch</h4>
+                    <p>
+                        <i class="fas fa-map-marker-alt"></i>
+                         <!-- *** REPLACE with actual Address or remove if not needed *** -->
+                        <span>[Optional: Trust Office Address, City, State, Pin Code]</span>
+                    </p>
+                    <p>
+                        <i class="fas fa-phone"></i>
+                         <!-- *** REPLACE with actual Phone Number *** -->
+                        <a href="tel:+910000000000">+91 000 000 0000</a>
+                    </p>
+                    <p>
+                        <i class="fas fa-envelope"></i>
+                         <!-- *** REPLACE with actual Email Address *** -->
+                        <a href="mailto:info@kallarackaltrust.org">info@kallarackaltrust.org</a>
+                    </p>
+                </div>
+
+                <!-- Column 3: Social Media Links -->
+                <div class="footer-column footer-social">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                         <!-- *** REPLACE '#' with your actual Instagram profile URL *** -->
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                         <!-- Add other social links similarly if needed -->
+                         <!-- Example: Facebook -->
+                         <!-- <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Follow us on Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a> -->
+                         <!-- Example: LinkedIn -->
+                         <!-- <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Follow us on LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a> -->
+                    </div>
+                </div>
+
+            </div> <!-- /.footer-grid -->
+
+            <div class="footer-copyright">
+                <p>© <span id="currentYear"></span> Kallarackal Family Trust. All Rights Reserved.</p>
+                 <!-- Optional: Links to Privacy Policy/Terms -->
+                 <!-- <p><a href="/privacy-policy">Privacy Policy</a> | <a href="/terms">Terms of Service</a></p> -->
+            </div>
+
+        </div> <!-- /.container -->
+    </footer>
+
+    <!-- Link to JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>

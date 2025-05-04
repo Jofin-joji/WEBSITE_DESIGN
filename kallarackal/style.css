@@ -1,0 +1,1022 @@
+/* === Kallarackal Family Trust - style.css === */
+
+/* --- Base Styles & Variables --- */
+:root {
+    /* Professional Color Palette */
+    --primary-color: #1A237E;   /* Deep Navy Blue */
+    --secondary-color: #607D8B; /* Cool Gray */
+    --accent-color: #B08D57;    /* Muted Gold */
+    --light-bg: #F8F9FA;        /* Very Light Gray/Off-White */
+    --dark-bg: #1c1c1e;         /* Dark Charcoal */
+    --light-text: #333333;      /* Dark Gray Text */
+    --dark-text: #EAEAEA;       /* Light Gray Text */
+    --light-card-bg: #ffffff;
+    --dark-card-bg: #2a2a2e;    /* Slightly lighter dark card */
+    --light-border: #dee2e6;
+    --dark-border: #4a4a4e;     /* Adjusted dark border */
+    --navbar-bg-light: rgba(248, 249, 250, 0.9);
+    --navbar-bg-dark: rgba(28, 28, 30, 0.9);
+    --shadow-light: 0 5px 20px rgba(0, 0, 0, 0.08);
+    --shadow-dark: 0 5px 20px rgba(0, 0, 0, 0.25);
+
+    /* Font Variables (Montserrat & Lato) */
+    --font-primary: 'Lato', sans-serif;
+    --font-heading: 'Montserrat', sans-serif;
+
+    /* Other Variables */
+    --transition-speed: 0.4s;
+    --border-radius: 8px;
+}
+
+/* --- Dark Mode Overrides for Variables --- */
+body.dark-mode {
+    --primary-color: #B08D57;   /* Lighter Navy */
+    --secondary-color: #90A4AE; /* Lighter Gray */
+    --accent-color: #D4B783;    /* Lighter Gold */
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
+}
+
+/* --- Global Styles --- */
+html {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary); /* Lato */
+    font-weight: 400;
+    line-height: 1.7;
+    background-color: var(--light-bg);
+    color: var(--light-text);
+    transition: background-color var(--transition-speed) ease, color var(--transition-speed) ease;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    position: relative; /* Needed for z-index stacking with gradient */
+    min-height: 100vh; /* Ensure body takes full height */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-heading); /* Montserrat */
+    margin-bottom: 1rem;
+    line-height: 1.3;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 3.8rem;
+    text-align: center;
+    margin-bottom: 2.5rem;
+    position: relative;
+    color: var(--primary-color);
+    padding-bottom: 0.5rem;
+}
+
+h2::after { /* Underline animation */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+    border-radius: 2px;
+    transition: width var(--transition-speed) ease;
+}
+
+h2:hover::after {
+    width: 120px;
+}
+
+h3 {
+    font-weight: 600; /* Semi-Bold Montserrat */
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed) ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* --- Animated Gradient Background --- */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Behind all content */
+    background: linear-gradient(
+        -45deg,
+        #e7eaf6, /* Light variation */
+        var(--light-bg),
+        #d4dde9, /* Cooler variation */
+        var(--light-bg)
+    );
+    background-size: 400% 400%;
+    animation: gradientAnimation 25s ease infinite;
+    opacity: 0.6;
+    transition: opacity 0.5s ease, background 0.5s ease; /* Transition background too */
+}
+
+body.dark-mode::before {
+     background: linear-gradient(
+        -45deg,
+        #1f2833, /* Dark blue/gray */
+        var(--dark-bg),
+        #2c3e50, /* Another dark shade */
+        var(--dark-bg)
+    );
+     background-size: 400% 400%;
+     animation: gradientAnimation 30s ease infinite;
+     opacity: 0.4;
+}
+
+/* Ensure main content sections are above the gradient */
+main {
+    position: relative;
+    z-index: 1;
+}
+
+/* --- Header & Navbar --- */
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* High z-index */
+    background-color: var(--navbar-bg-light);
+    backdrop-filter: blur(10px);
+    box-shadow: var(--shadow-light);
+    transition: background-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+}
+
+body.dark-mode .site-header {
+    background-color: var(--navbar-bg-dark);
+    box-shadow: var(--shadow-dark);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.nav-brand a {
+    font-family: var(--font-heading);
+    font-size: 2.0rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-links a {
+    font-family: var(--font-heading); /* Use heading font for nav links too */
+    font-weight: 600; /* Semi-bold Montserrat */
+    padding: 0.5rem 0;
+    position: relative;
+    color: var(--light-text);
+    transition: color var(--transition-speed);
+}
+
+body.dark-mode .nav-links a {
+    color: var(--dark-text);
+}
+
+.nav-links a::after { /* Underline animation */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--primary-color), var(--accent-color)); /* Primary to Accent */
+    transition: width var(--transition-speed) ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+     color: var(--primary-color);
+}
+body.dark-mode .nav-links a:hover {
+     color: var(--accent-color);
+}
+
+.nav-extra {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-text);
+    transition: color var(--transition-speed), transform 0.3s ease;
+}
+body.dark-mode #darkModeToggle {
+    color: var(--dark-text);
+}
+#darkModeToggle svg {
+    width: 22px;
+    height: 22px;
+    transition: transform 0.3s ease;
+}
+#darkModeToggle:hover {
+    transform: scale(1.1);
+}
+#darkModeToggle:hover svg {
+    transform: rotate(15deg);
+}
+.dark-mode .sun { display: block; }
+.dark-mode .moon { display: none; }
+body:not(.dark-mode) .sun { display: none; }
+body:not(.dark-mode) .moon { display: block; }
+
+/* Mobile Nav Toggle */
+.mobile-nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--light-text);
+    z-index: 1001; /* Above nav links when open */
+}
+body.dark-mode .mobile-nav-toggle {
+    color: var(--dark-text);
+}
+
+/* --- Hero Slider --- */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    height: 75vh;
+    overflow: hidden;
+    margin-top: 60px; /* Adjust based on navbar height */
+    background-color: #333; /* Fallback */
+     z-index: 1; /* Above background gradient */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-color: var(--dark-bg);
+}
+
+.slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.65); /* Adjusted brightness */
+}
+
+.slide-caption {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1rem 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    font-size: 1.9rem;
+    font-family: var(--font-heading);
+    opacity: 0;
+    animation: slideCaptionFadeIn 1s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.slide.active .slide-caption {
+    opacity: 1;
+}
+
+@keyframes slideCaptionFadeIn {
+    from { transform: translate(-50%, 20px); opacity: 0; }
+    to { transform: translate(-50%, 0); opacity: 1; }
+}
+
+/* --- Content Sections --- */
+.content-section {
+    padding: 60px 0;
+    position: relative; /* Ensure sections sit above body gradient */
+    z-index: 1;
+    /* Background color will be inherited or set by section-alt */
+}
+
+.section-alt {
+    background-color: var(--light-card-bg);
+    border-top: 1px solid var(--light-border);
+    border-bottom: 1px solid var(--light-border);
+}
+
+body.dark-mode .section-alt {
+    background-color: var(--dark-card-bg);
+     border-top: 1px solid var(--dark-border);
+    border-bottom: 1px solid var(--dark-border);
+}
+
+/* --- Scroll Reveal Animation Styles --- */
+/* Initial hidden states */
+.reveal-bottom-initial,
+.reveal-left-initial,
+.reveal-right-initial,
+.reveal-scale-initial,
+.reveal-fade-initial {
+    opacity: 0;
+    transition: opacity 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275), /* Ease out back like */
+                transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    will-change: transform, opacity; /* Performance hint */
+}
+
+.reveal-bottom-initial { transform: translateY(50px); }
+.reveal-left-initial { transform: translateX(-60px); }
+.reveal-right-initial { transform: translateX(60px); }
+.reveal-scale-initial { transform: scale(0.8); }
+.reveal-fade-initial { transform: none; } /* Only fades */
+
+/* Final visible state */
+.is-visible {
+    opacity: 1 !important;
+    transform: translate(0, 0) scale(1) !important; /* Reset all transforms */
+}
+
+/* Ensure grid items also transition (needed for stagger delay) */
+.highlight-item,
+.official-card,
+.gallery-item {
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out, box-shadow 0.4s ease;
+    /* transition-delay is added via JS */
+}
+
+/* --- About Section --- */
+.about-content-grid {
+    display: grid;
+    grid-template-columns: 3fr 1fr; /* More space for text */
+    gap: 2.5rem;
+    align-items: center;
+    margin-top: 2.5rem;
+}
+
+.about-video video {
+    width: 100%;
+    max-width: 280px; /* Smaller max-width */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--light-border);
+}
+body.dark-mode .about-video video {
+    box-shadow: var(--shadow-dark);
+    border-color: var(--dark-border);
+}
+
+/* --- Trust Details Section --- */
+#trust-details p {
+     max-width: 800px; /* Improve readability */
+     margin-left: auto;
+     margin-right: auto;
+     text-align: center;
+}
+
+
+/* --- Highlights Section --- */
+.highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.highlight-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow-light);
+    cursor: pointer;
+    /* Transition is handled by general item transition rule */
+}
+body.dark-mode .highlight-item {
+    box-shadow: var(--shadow-dark);
+}
+.highlight-item img {
+    transition: transform 0.5s ease;
+    display: block;
+    width: 100%;
+}
+.highlight-item:hover img {
+    transform: scale(1.1);
+}
+.highlight-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(26, 35, 126, 0.9), transparent); /* Primary color gradient */
+    color: #fff;
+    padding: 3rem 1.5rem 1.5rem;
+    transform: translateY(100%);
+    transition: transform var(--transition-speed) ease-out;
+}
+body.dark-mode .highlight-overlay {
+     background: linear-gradient(to top, rgba(92, 107, 192, 0.9), transparent); /* Lighter primary */
+}
+.highlight-item:hover .highlight-overlay {
+    transform: translateY(0);
+}
+.highlight-overlay h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 0.5rem;
+    font-size: 1.4rem;
+    color: var(--accent-color);
+}
+.highlight-overlay p {
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    color: #f0f0f0;
+}
+
+/* --- NEW: Guardian Section Styles --- */
+#guardian {
+    /* Uses content-section padding and section-alt background */
+    position: relative; /* Ensure stacking context */
+    z-index: 1;
+}
+
+.guardian-content-grid {
+    display: grid;
+    /* Adjust column ratio as needed: image vs text */
+    grid-template-columns: 1fr 1.8fr; /* Example: Text gets more space */
+    gap: 3rem; /* Space between image and text */
+    align-items: center; /* Vertically align image and text block */
+    margin-top: 3rem; /* Space below the H2 heading */
+}
+
+.guardian-image img {
+    display: block;
+    width: 100%;
+    max-width: 350px; /* Control max size of the image */
+    height: auto;
+    aspect-ratio: 1 / 1; /* Make it square */
+    object-fit: cover; /* Crop image nicely */
+    border-radius: 50%; /* Make it a circle */
+    margin: 0 auto; /* Center if column is wider */
+    border: 5px solid var(--accent-color); /* Accent border */
+    box-shadow: var(--shadow-light);
+}
+
+body.dark-mode .guardian-image img {
+    box-shadow: var(--shadow-dark);
+    border-color: var(--accent-color); /* Keep accent or use primary for dark */
+}
+
+.guardian-text h3 {
+    font-size: 1.8rem; /* Slightly larger heading for name */
+    color: var(--primary-color);
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.guardian-text h4 { /* Title */
+    font-size: 1rem;
+    font-weight: 600; /* Semi-bold Lato or Montserrat */
+    color: var(--secondary-color);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+}
+
+.guardian-text p {
+    font-size: 1.05rem; /* Slightly larger than default body text maybe */
+    line-height: 1.8;
+    margin-bottom: 1.2rem;
+}
+
+.guardian-text blockquote {
+    margin-top: 2rem;
+    padding-left: 1.5rem;
+    border-left: 4px solid var(--accent-color);
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--secondary-color); /* Use secondary color for quote */
+}
+body.dark-mode .guardian-text blockquote {
+    color: var(--secondary-color); /* Adjust quote color if needed for dark mode */
+    border-left-color: var(--accent-color);
+}
+.guardian-text blockquote p {
+    margin-bottom: 0; /* Remove bottom margin inside blockquote */
+    font-size: inherit; /* Inherit blockquote font size */
+}
+
+/* --- Adjust Officials Section Background (if needed) --- */
+/* If #guardian now has section-alt, remove it from #officials */
+#officials {
+   /* Ensure it has the default background if #guardian is section-alt */
+   background-color: var(--light-bg);
+   border-top: none; /* Remove borders if they were part of section-alt */
+   border-bottom: none;
+}
+body.dark-mode #officials {
+    background-color: var(--dark-bg);
+}
+
+
+/* --- Responsiveness for Guardian Section --- */
+@media (max-width: 768px) {
+    .guardian-content-grid {
+        grid-template-columns: 1fr; /* Stack image and text */
+        gap: 2rem; /* Adjust gap */
+        text-align: center; /* Center text block */
+    }
+
+    .guardian-image img {
+        max-width: 250px; /* Smaller image on mobile */
+        margin-bottom: 1.5rem; /* Space below image when stacked */
+    }
+
+    .guardian-text h3 {
+        font-size: 1.6rem;
+    }
+     .guardian-text h4 {
+        font-size: 0.9rem;
+    }
+    .guardian-text p {
+        font-size: 1rem;
+        text-align: left; /* Keep paragraphs left-aligned */
+        max-width: 500px; /* Prevent very long lines */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .guardian-text blockquote {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 450px;
+         text-align: left;
+    }
+}
+
+
+/* --- Officials Section --- */
+.officials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.official-card {
+    background-color: var(--light-card-bg);
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    text-align: center;
+    box-shadow: var(--shadow-light);
+    border: 1px solid var(--light-border);
+     /* Transition handled by general item transition rule */
+}
+body.dark-mode .official-card {
+    background-color: var(--dark-card-bg);
+    box-shadow: var(--shadow-dark);
+    border-color: var(--dark-border);
+}
+.official-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+body.dark-mode .official-card:hover {
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+.official-card img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 1rem;
+    border: 4px solid var(--accent-color); /* Accent border */
+    box-shadow: 0 0 15px rgba(176, 141, 87, 0.4); /* Gold glow */
+}
+.official-card h3 {
+    margin-bottom: 0.25rem;
+    font-size: 1.4rem;
+    color: var(--primary-color);
+}
+.official-card h4 { /* Designation */
+    font-family: var(--font-primary); /* Lato */
+    font-weight: 400;
+    font-size: 1rem;
+    color: var(--secondary-color);
+    margin-bottom: 1rem;
+}
+.official-card p { /* Quote */
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #555;
+}
+body.dark-mode .official-card p {
+    color: #bbb;
+}
+
+
+
+/* --- NEW: Scrolling Gallery Styles --- */
+.full-width-container { /* Optional: Allows gallery to span wider */
+    max-width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.scrolling-gallery-wrapper {
+    width: 100%;
+    overflow: hidden; /* Crucial: Hides the overflowing content */
+    margin-top: 3rem; /* Space below heading */
+    /* Optional: Add a mask for feathered edges */
+    /* -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); */
+    /* mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent); */
+}
+
+.gallery-scroll-row {
+    display: flex; /* Use flexbox for the row itself */
+    width: 100%;
+    margin-bottom: 1rem; /* Space between rows */
+    /* Apply initial animation state if needed (reveal-fade-initial used in HTML) */
+}
+
+.gallery-row-inner {
+    display: flex; /* Arrange items horizontally */
+    flex-shrink: 0; /* Prevent inner container from shrinking */
+    gap: 1rem; /* Space between items */
+    /* The width will effectively be doubled by JS duplication */
+    /* Animation is applied here */
+    animation: scrollLeftLoop 45s linear infinite; /* Adjust time for speed */
+    will-change: transform; /* Performance hint */
+}
+
+.gallery-row-inner.reverse-scroll {
+    /* Apply the reverse animation */
+    animation-name: scrollRightLoop;
+    animation-duration: 55s; /* Can vary speed per row */
+}
+
+/* Pause animation on row hover */
+.gallery-scroll-row:hover .gallery-row-inner {
+    animation-play-state: paused;
+}
+
+/* Define the scrolling animations */
+@keyframes scrollLeftLoop {
+    0% { transform: translateX(0); }
+    /* Translate left by exactly the width of ONE set of images */
+    /* Since JS duplicates the content, we move by -50% of the NEW total width */
+    100% { transform: translateX(-50%); }
+}
+
+@keyframes scrollRightLoop {
+    0% { transform: translateX(-50%); } /* Start from the duplicated content position */
+    100% { transform: translateX(0); } /* Move back to the original start */
+}
+
+
+.gallery-scroll-item {
+    flex-shrink: 0; /* Prevent items from shrinking */
+    width: auto; /* Let image width determine item width initially */
+    height: 200px; /* Set a consistent height for rows - ADJUST AS NEEDED */
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    box-shadow: var(--shadow-light);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+                filter 0.4s ease,
+                box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+body.dark-mode .gallery-scroll-item {
+    box-shadow: var(--shadow-dark);
+}
+
+.gallery-scroll-item img {
+    display: block;
+    height: 100%; /* Fill the item height */
+    width: auto; /* Maintain aspect ratio */
+    min-width: 150px; /* Prevent images from becoming too narrow */
+    object-fit: cover; /* Cover the area, may crop */
+    transition: transform 0.4s ease, filter 0.4s ease; /* Add transition to image too */
+}
+
+/* Hover effects for the item */
+.gallery-scroll-item:hover {
+    transform: scale(1.08); /* Slightly larger zoom */
+    z-index: 10; /* Bring hovered item to front */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    filter: brightness(1.1); /* Brighten the whole item */
+}
+body.dark-mode .gallery-scroll-item:hover {
+     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* --- Responsiveness for Scrolling Gallery --- */
+@media (max-width: 768px) {
+    .gallery-scroll-item {
+        height: 150px; /* Smaller height on medium screens */
+    }
+    .gallery-row-inner {
+        animation-duration: 35s; /* Faster scroll on mobile maybe */
+    }
+    .gallery-row-inner.reverse-scroll {
+        animation-duration: 45s;
+    }
+}
+
+@media (max-width: 480px) {
+     .gallery-scroll-item {
+        height: 120px; /* Even smaller height */
+    }
+     .gallery-row-inner {
+        gap: 0.75rem; /* Reduce gap */
+        animation-duration: 30s;
+    }
+    .gallery-row-inner.reverse-scroll {
+        animation-duration: 40s;
+    }
+}
+
+/* Optional: Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .gallery-row-inner {
+    animation: none; /* Disable animation */
+  }
+   .gallery-scroll-row:hover .gallery-row-inner {
+      animation-play-state: running; /* Ensure hover pause doesn't apply */
+   }
+   /* You might want alternative styling here, like a simple grid */
+}
+
+/* --- Footer --- */
+.site-footer-bottom {
+    background-color: #222831; /* Dark slate */
+    color: #ccc;
+    padding: 50px 0 30px;
+    margin-top: 60px;
+    font-size: 0.95rem;
+    border-top: 4px solid var(--primary-color);
+    line-height: 1.7;
+    position: relative; /* Ensure footer is above gradient */
+    z-index: 10;
+}
+
+body.dark-mode .site-footer-bottom {
+    background-color: #181a1b;
+    color: #a0a0a0;
+    border-top-color: var(--accent-color);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.footer-column h4 {
+    font-family: var(--font-heading);
+    color: var(--accent-color);
+    margin-bottom: 1.2rem;
+    font-size: 1.3rem;
+    position: relative;
+    padding-bottom: 0.6rem;
+    font-weight: 700;
+}
+
+.footer-column h4::after { /* Underline */
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    border-radius: 1px;
+}
+
+.footer-column p { margin-bottom: 0.8rem; }
+
+.footer-column a {
+    color: #e0e0e0;
+    text-decoration: none;
+    transition: color var(--transition-speed) ease, text-shadow 0.3s ease;
+}
+body.dark-mode .footer-column a { color: #cacaca; }
+.footer-column a:hover {
+    color: var(--accent-color);
+    text-shadow: 0 0 6px var(--accent-color);
+}
+
+.footer-contact i { /* Icons */
+    margin-right: 10px;
+    color: var(--secondary-color);
+    width: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+.footer-contact p {
+    display: flex;
+    align-items: flex-start;
+}
+.footer-contact span { display: inline-block; }
+
+/* Social Media Icons */
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+.social-links a {
+    color: #ccc;
+    font-size: 1.6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+body.dark-mode .social-links a {
+    color: #aaa;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+.social-links a:hover {
+    transform: translateY(-4px) scale(1.1);
+    color: #fff;
+    background-color: var(--primary-color);
+}
+
+/* Copyright Section */
+.footer-copyright {
+    text-align: center;
+    margin-top: 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #444;
+    font-size: 0.9rem;
+    color: #aaa;
+}
+body.dark-mode .footer-copyright {
+    border-top-color: #3a3a3e;
+    color: #888;
+}
+.footer-copyright p { margin-bottom: 0.5rem; }
+.footer-copyright a { color: #bbb; }
+body.dark-mode .footer-copyright a { color: #999; }
+.footer-copyright a:hover { color: var(--accent-color); }
+
+
+/* --- Responsiveness --- */
+@media (max-width: 992px) {
+    h2 { font-size: 2.1rem; }
+    .officials-grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+    .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+}
+
+@media (max-width: 768px) {
+    .navbar { padding: 0.8rem 1rem; }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 70%;
+        height: 100vh;
+        background-color: var(--light-bg);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        transition: right 0.5s ease-in-out;
+        padding-top: 60px;
+        z-index: 999; /* Below toggle button */
+    }
+    body.dark-mode .nav-links {
+        background-color: var(--dark-card-bg);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.3);
+    }
+    .nav-links.active { right: 0; }
+    .nav-links a { font-size: 1.2rem; }
+
+    .mobile-nav-toggle { display: block; }
+
+    .hero-slider { height: 55vh; }
+    .slide-caption { font-size: 1.5rem; padding: 0.8rem 1.5rem; }
+
+    /* Stack About Section */
+    .about-content-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .about-video {
+        order: -1; /* Video above text */
+        margin-bottom: 1.5rem;
+    }
+    .about-video video {
+        max-width: 300px; /* Adjust if needed */
+    }
+
+    .highlights-grid { grid-template-columns: 1fr; }
+    .officials-grid { grid-template-columns: 1fr; }
+    .gallery-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 0.8rem; }
+
+    .content-section { padding: 40px 0; }
+    h2 { margin-bottom: 2rem; }
+
+    /* Footer stacking and centering */
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2rem;
+    }
+    .footer-column h4::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .footer-contact p {
+        justify-content: center;
+        text-align: left;
+        max-width: 350px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .social-links { justify-content: center; }
+}
+
+@media (max-width: 480px) {
+    h2 { font-size: 1.9rem; }
+    .nav-brand a { font-size: 1.2rem; }
+    .official-card img { width: 120px; height: 120px; }
+    .gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 0.5rem; }
+     .site-footer-bottom { font-size: 0.9rem; }
+     .social-links a { font-size: 1.5rem; width: 35px; height: 35px; }
+}
