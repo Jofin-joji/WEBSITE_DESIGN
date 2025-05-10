@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function startSlider() {
         stopSlider(); // Clear any existing interval before starting a new one
         if (slides.length > 0) {
-            showSlide(currentSlide); // Show initial slide immediately
+            showSlide(currentSlide); 
             slideInterval = setInterval(nextSlide, slideIntervalTime);
         }
     }
