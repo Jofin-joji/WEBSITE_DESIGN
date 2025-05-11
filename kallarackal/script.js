@@ -86,10 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Toggle theme based on current state
             if (body.classList.contains('dark-mode')) {
                 applyTheme('light');
-                localStorage.setItem('theme', 'light'); // Save preference
+                localStorage.setItem('theme', 'light'); 
             } else {
                 applyTheme('dark');
-                localStorage.setItem('theme', 'dark'); // Save preference
+                localStorage.setItem('theme', 'dark'); 
             }
         });
     }
