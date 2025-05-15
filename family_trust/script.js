@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function nextSlide() {
         if (!slides || slides.length === 0) return;
-        currentSlide = (currentSlide + 1) % slides.length; // Loop back to the first slide
+        currentSlide = (currentSlide + 1) % slides.length; 
         showSlide(currentSlide);
     }
 
