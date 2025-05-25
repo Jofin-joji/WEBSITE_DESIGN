@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let slideInterval;
 
     function showSlide(index) {
-        // Ensure slides exist before proceeding
+      
         if (!slides || slides.length === 0) return;
         slides.forEach((slide, i) => {
             slide.classList.remove('active');
