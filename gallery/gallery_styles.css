@@ -1,0 +1,199 @@
+/* --- 1. SETUP & THEME VARIABLES --- */
+:root {
+    --font-sans: 'Inter', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+    --ease-in-out-cubic: cubic-bezier(0.65, 0, 0.35, 1);
+
+    /* Light Mode */
+    --bg-color: #f0f0f0;
+    --text-color: #1a1a1a;
+    --accent-gold: #b38b00;
+    --card-bg: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --text-color-translucent: rgba(26, 26, 26, 0.2);
+    --modal-backdrop-color: rgba(255, 255, 255, 0.6);
+}
+
+.dark-mode {
+    /* Dark Mode */
+    --bg-color: #0d1117;
+    --text-color: #e6edf3;
+    --accent-gold: #d4af37;
+    --card-bg: #161b22;
+    --shadow-color: rgba(0, 0, 0, 0.2);
+    --text-color-translucent: rgba(230, 237, 243, 0.2);
+    --modal-backdrop-color: rgba(13, 17, 23, 0.7);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    transition: background-color 0.5s var(--ease-in-out-cubic), color 0.5s var(--ease-in-out-cubic);
+    overflow-x: hidden;
+    cursor: auto; /* Restored default cursor */
+}
+
+/* --- 2. HEADER & CONTROLS --- */
+.top-controls {
+    position: fixed;
+    top: 2rem;
+    right: 2rem;
+    z-index: 1000;
+    display: flex;
+    gap: 1rem;
+}
+.control-button {
+    width: 44px;
+    height: 44px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--text-color-translucent);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer; /* Restored pointer cursor */
+    transition: transform 0.3s var(--ease-out-quint), background-color 0.3s;
+}
+.control-button:hover {
+    transform: scale(1.1);
+}
+.control-button svg {
+    width: 20px;
+    height: 20px;
+    stroke: var(--text-color);
+    stroke-width: 1.5px;
+}
+.dark-mode .control-button .sun { display: block; }
+.dark-mode .control-button .moon { display: none; }
+body:not(.dark-mode) .control-button .sun { display: none; }
+body:not(.dark-mode) .control-button .moon { display: block; }
+
+.gallery-header {
+    text-align: center;
+    padding: 8rem 2rem 4rem 2rem;
+}
+.gallery-header h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+.gallery-header p {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    margin-top: 0.5rem;
+    opacity: 0.7;
+}
+
+/* --- 3. ADVANCED MASONRY GRID --- */
+.gallery-grid {
+    padding: 0 2rem;
+    max-width: 1800px;
+    margin: 0 auto 4rem auto;
+    position: relative; /* Required for Macy.js positioning */
+}
+.gallery-item {
+    width: 100%; /* The JS library will calculate the multi-column width */
+    margin-bottom: 1.5rem; /* This is our vertical gap */
+    break-inside: avoid; /* Prevents items from breaking across columns */
+    position: relative; /* For the caption overlay */
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px var(--shadow-color);
+    transition: transform 0.4s var(--ease-out-quint), box-shadow 0.4s var(--ease-out-quint);
+}
+.gallery-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 15px 35px var(--shadow-color);
+    z-index: 10;
+}
+.gallery-item img {
+    display: block;
+    width: 100%;
+    height: auto; /* This is key for Masonry - let height be natural */
+    border-radius: 8px;
+    transition: transform 0.5s var(--ease-out-quint);
+}
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: #fff;
+    padding: 2rem 1rem 1rem 1rem;
+    text-align: left;
+    transform: translateY(100%);
+    opacity: 0;
+    transition: transform 0.4s var(--ease-out-quint), opacity 0.4s var(--ease-out-quint);
+}
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0);
+    opacity: 1;
+}
+.gallery-caption h3 {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-shadow: 0 1px 5px rgba(0,0,0,0.7);
+}
+
+/* --- 4. SCROLL & MODAL STYLES --- */
+[data-scroll-reveal] {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s var(--ease-out-quint), transform 0.8s var(--ease-out-quint);
+}
+[data-scroll-reveal].is-in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+.modal-backdrop {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: var(--modal-backdrop-color);
+    backdrop-filter: blur(8px); z-index: 2000;
+    display: none; justify-content: center; align-items: center;
+    opacity: 0; transition: opacity 0.4s var(--ease-in-out-cubic);
+}
+.modal-backdrop.visible { display: flex; opacity: 1; }
+.modal-content {
+    background: var(--card-bg); padding: 2.5rem; border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.2); width: 90%; max-width: 400px;
+    text-align: center; border: 1px solid var(--text-color-translucent);
+    transform: scale(0.95); transition: transform 0.4s var(--ease-out-quint);
+}
+.modal-backdrop.visible .modal-content { transform: scale(1); }
+.modal-content h3 {
+    font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 1.5rem; color: var(--text-color);
+}
+.modal-content input, .modal-content button {
+    width: 100%; padding: 0.8rem 1rem; margin-bottom: 1rem; border-radius: 8px;
+    border: 1px solid var(--text-color-translucent); background-color: var(--bg-color);
+    color: var(--text-color); font-size: 1rem; font-family: var(--font-sans);
+}
+.modal-content button {
+    background-color: var(--accent-gold); color: var(--bg-color); border: none; font-weight: 500;
+    cursor: pointer; transition: opacity 0.3s;
+}
+.modal-content button:hover { opacity: 0.9; }
+.error-message { color: #e74c3c; min-height: 1.2em; font-size: 0.9rem; }
+.status-message { color: var(--text-color); min-height: 1.2em; font-size: 0.9rem; opacity: 0.8;}
+
+/* Add this to the end of your style.css */
+
+.empty-gallery-message {
+    grid-column: 1 / -1; /* Make it span the full width if grid is active */
+    width: 100%;
+    text-align: center;
+    padding: 4rem 2rem;
+    font-size: 1.2rem;
+    font-family: var(--font-serif);
+    color: var(--text-color);
+    opacity: 0.6;
+}
