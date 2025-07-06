@@ -13,7 +13,7 @@
     --text-secondary: #a4a4a8;
 }
 
-/* --- Light Mode Variable Overrides --- */
+
 body.light-mode {
     --bg-color: #f4f6f8;
     --container-bg-color: #ffffff;
