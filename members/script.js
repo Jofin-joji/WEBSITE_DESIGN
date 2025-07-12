@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const memberDetailContent = document.getElementById('member-detail-content');
     const themeToggleButton = document.getElementById('theme-toggle-btn');
     
-    // --- Global State ---
+   
     let allFamilies = {};
     let currentFamilyMembers = [];
 
