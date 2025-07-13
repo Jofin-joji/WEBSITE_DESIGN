@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // --- 1. THEME TOGGLE (DARK/LIGHT MODE) ---
+   
     const modeToggle = document.getElementById('mode-toggle');
     const body = document.body;
     const savedTheme = localStorage.getItem('theme') || 'dark';
