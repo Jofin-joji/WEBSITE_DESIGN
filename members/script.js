@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Element Selectors ---
+  
     const directoryContainer = document.getElementById('directory-body');
     const searchInput = document.getElementById('search-input');
     const modalOverlay = document.getElementById('modal-overlay');
