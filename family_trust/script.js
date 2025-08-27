@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 1. Hero Image Slider ---
     const slides = document.querySelectorAll('.hero-slider .slide');
     let currentSlide = 0;
-    const slideIntervalTime = 3000; // Interval time in milliseconds (3 seconds)
+    const slideIntervalTime = 3000;
     let slideInterval;
 
     function showSlide(index) {
