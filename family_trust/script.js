@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- 1. Hero Image Slider ---
     const slides = document.querySelectorAll('.hero-slider .slide');
     let currentSlide = 0;
-    const slideIntervalTime = 3000;
+    const slideIntervalTime = 3000; // Interval time in milliseconds (3 seconds)
     let slideInterval;
 
     function showSlide(index) {
-      
+        // Ensure slides exist before proceeding
         if (!slides || slides.length === 0) return;
         slides.forEach((slide, i) => {
             slide.classList.remove('active');
@@ -21,14 +21,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function nextSlide() {
         if (!slides || slides.length === 0) return;
-        currentSlide = (currentSlide + 1) % slides.length; 
+        currentSlide = (currentSlide + 1) % slides.length; // Loop back to the first slide
         showSlide(currentSlide);
     }
 
     function startSlider() {
         stopSlider(); // Clear any existing interval before starting a new one
         if (slides.length > 0) {
-            showSlide(currentSlide); 
+            showSlide(currentSlide); // Show initial slide immediately
             slideInterval = setInterval(nextSlide, slideIntervalTime);
         }
     }
@@ -86,10 +86,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // Toggle theme based on current state
             if (body.classList.contains('dark-mode')) {
                 applyTheme('light');
-                localStorage.setItem('theme', 'light'); 
+                localStorage.setItem('theme', 'light'); // Save preference
             } else {
                 applyTheme('dark');
-                localStorage.setItem('theme', 'dark'); 
+                localStorage.setItem('theme', 'dark'); // Save preference
             }
         });
     }

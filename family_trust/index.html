@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- MODIFIED: This line prevents zooming on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Kallarackal Family Trust</title>
+    <link rel="icon" href="images/gallery/logo.png" type="image/png">
     <link rel="stylesheet" href="style.css">
 
-    <!-- Google Fonts (Montserrat & Lato) -->
+    <!-- Google Fonts (Montserrat, Lato, and Manjari for Malayalam) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Manjari:wght@100;400;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
     <!-- Font Awesome (ensure you have a valid Kit URL or use downloaded icons) -->
     <!-- Replace YOUR_KIT_CODE with your actual Font Awesome Kit code -->
@@ -45,24 +47,24 @@
             </div>
         </nav>
     </header>
-
+    
     <main>
         <!-- Hero Slider Section -->
         <section id="hero-slider" class="hero-slider">
             <!-- Add 'active' class to the first slide -->
             <div class="slide active">
                  <!-- *** REPLACE with your actual image path *** -->
-                <img src="images/slider-1.jpg" alt="Trust Activity 1 - Empowering Communities">
+                <img src="images/Generated Image September 06, 2025 - 1_26PM.jpeg" alt="Trust Activity 1 - Empowering Communities">
                 <div class="slide-caption">Empowering Communities</div>
             </div>
             <div class="slide">
                  <!-- *** REPLACE with your actual image path *** -->
-                <img src="images/slider-2.jpg" alt="Trust Activity 2 - Supporting Education">
+                <img src="images/2.jpg" alt="Trust Activity 2 - Supporting Education">
                 <div class="slide-caption">Supporting Education</div>
             </div>
             <div class="slide">
                  <!-- *** REPLACE with your actual image path *** -->
-                <img src="images/slider-3.jpg" alt="Trust Activity 3 - Building Futures Together">
+                <img src="images/st_marys.jpeg" alt="Trust Activity 3 - Building Futures Together">
                 <div class="slide-caption">Building Futures Together</div>
             </div>
             <!-- Add more slides as needed, ensure images exist -->
@@ -83,9 +85,8 @@
                     <!-- Add initial animation class -->
                     <div class="about-text reveal-left-initial">
                         <!-- *** REPLACE with your actual content *** -->
-                        <p>Welcome to the Kallarackal Family Trust website. Our trust is dedicated to fostering community well-being through impactful initiatives in education, healthcare, and sustainable development. Founded on the principles of compassion, integrity, and service, we strive to make a meaningful and lasting difference in the lives of others.</p>
-                        <p>Established by the Kallarackal family, the trust carries forward a legacy of philanthropy and commitment to social responsibility. Discover our history, the core values that guide our work, and our vision for a brighter future for the communities we serve.</p>
-                        <!-- Add more details about history, vision, values if needed -->
+                        <!-- Added 'malayalam-font' class and adjusted line-height for better readability -->
+                        <p class="malayalam-font">കല്ലറയ്ക്കൽ ഫാമിലി ട്രസ്റ്റ് രൂപീകരിച്ചതിനുള്ള പ്രഥമലക്ഷ്യം കല്ലറയ്ക്കൽ കുടുംബാംഗങ്ങൾക്കും അതുപോലെ പൊതുസമൂഹത്തിനും വിവിധങ്ങളായിട്ടുള്ള സഹായി സഹകരണങ്ങൾ നൽകുക എന്നുള്ളതാണ്. കുടുംബാംഗങ്ങളുടെ സാമ്പത്തിക മാനേജ്മെൻറ് പിന്തുടർച്ച ആസൂത്രണം, ആസ്തി സംരക്ഷണം, ആരോഗ്യ സംരക്ഷണം എന്നിവയാണ്.</p>                        <!-- Add more details about history, vision, values if needed -->
                     </div>
                      <!-- Add initial animation class -->
                     <div class="about-video reveal-right-initial">
@@ -97,12 +98,7 @@
                             4. Ensure the video format is web-friendly (MP4/WebM).
                             5. Keep the video file size reasonably small for faster loading.
                         -->
-                        <video width="100%" height="auto" autoplay loop muted playsinline>
-                             <!-- *** REPLACE with your actual video path *** -->
-                            <source src="videos/kft-logo-animation.mp4" type="video/mp4">
-                            <!-- Optional: <source src="videos/kft-logo-animation.webm" type="video/webm"> -->
-                            Your browser does not support the video tag. An animation representing the Kallarackal Family Trust logo should be playing here.
-                        </video>
+                        <img src="images/logo.png" alt="Kallarackal Family Trust logo" width="100%" height="auto">
                     </div>
                 </div>
             </div>
@@ -115,8 +111,10 @@
                 <h2 class="reveal-bottom-initial">How the Trust Works</h2>
                  <!-- Add initial animation class + stagger delay -->
                 <!-- *** REPLACE with your actual content *** -->
-                <p class="reveal-bottom-initial" style="transition-delay: 0.1s;">The Kallarackal Family Trust operates through a structured approach to identify needs and implement effective programs. Our process involves rigorous assessment, community consultations, strategic partnerships, and transparent project management to ensure maximum impact and accountability.</p>
-                <p class="reveal-bottom-initial" style="transition-delay: 0.2s;">Funds are allocated based on thorough evaluations, focusing on projects that align with our core mission, demonstrate potential for sustainable change, and address critical community needs. We are committed to ethical governance and responsible stewardship of resources.</p>
+                <p class="reveal-bottom-initial" style="transition-delay: 0.1s;">കുടുംബങ്ങൾക്കിടയിൽ സാഹോദര്യവും പരസ്പര ബന്ധവും, ഐക്യവും വളർത്തിയെടുക്കുകയും, കൂട്ടായ്മയിൽ നിലനിർത്തുകയും ചെയ്യുക.
+                    അംഗങ്ങൾക്ക് പൊതുതാല്പര്യമുള്ള കാര്യങ്ങൾ ചർച്ചചെയ്തു തീരുമാനിക്കുക.</p>
+                <p class="reveal-bottom-initial" style="transition-delay: 0.2s;">കുടുംബങ്ങളുടെ സാമൂഹികവും, സാമ്പത്തികവും സാംസ്കാരികവും, വിദ്യാഭ്യാസപരവുമായ അഭിവൃദ്ധിയ്ക്കുവേണ്ടി പ്രവർത്തിക്കുക.
+                    അംഗങ്ങളുടെ ഇടയിൽ ഉണ്ടാകുന്ന അഭിപ്രായ ഭിന്നതകളും തർക്കങ്ങളും പരിഹരിക്കുവാൻ ശ്രമിക്കുക.</p>
                 <!-- Add more details about governance, funding, application process if any -->
             </div>
         </section>
@@ -132,29 +130,29 @@
                     <!-- No reveal-* class needed on items themselves -->
                     <div class="highlight-item">
                          <!-- *** REPLACE with your actual image path *** -->
-                        <img src="images/program-scholarship.jpg" alt="Scholarship Program Highlight">
+                        <img src="images/gallery/mediclaim.jpeg" alt="Scholarship Program Highlight">
                         <div class="highlight-overlay">
                             <!-- *** REPLACE with your actual content *** -->
-                            <h3>Scholarship Program</h3>
-                            <p>Empowering bright students from underprivileged backgrounds to achieve their academic dreams.</p>
+                            <h3>Medi-claim</h3>
+                            <p> Provide health insurance policy that primarily covers hospitalization expenses incurred due to illness or accident.</p>
                         </div>
                     </div>
                     <div class="highlight-item">
                          <!-- *** REPLACE with your actual image path *** -->
-                        <img src="images/program-healthcare.jpg" alt="Healthcare Camp Highlight">
+                        <img src="images/gallery/A_medical_camp.jpg" alt="Healthcare Camp Highlight">
                          <div class="highlight-overlay">
                              <!-- *** REPLACE with your actual content *** -->
-                            <h3>Rural Healthcare Camp</h3>
-                            <p>Providing essential medical check-ups and services to remote and underserved communities.</p>
+                            <h3> Healthcare Camp</h3>
+                            <p>Providing essential medical check-ups and services to elavoor communities.</p>
                         </div>
                     </div>
                     <div class="highlight-item">
                          <!-- *** REPLACE with your actual image path *** -->
-                        <img src="images/program-community.jpg" alt="Community Center Highlight">
+                        <img src="images/gallery/educational_support.jpeg" alt="Community Center Highlight">
                          <div class="highlight-overlay">
                              <!-- *** REPLACE with your actual content *** -->
-                            <h3>Community Skill Center</h3>
-                            <p>A hub for local activities, vocational training, and fostering community engagement.</p>
+                            <h3>Educational Support</h3>
+                            <p>providing financial or resource assistance to students, often from underprivileged backgrounds.</p>
                         </div>
                     </div>
                      <!-- Add more highlight items as needed -->
@@ -175,14 +173,15 @@
                 </div>
                 <div class="guardian-text reveal-right-initial"> 
                      <!-- *** REPLACE with actual Name and Title *** -->
-                    <h3>Mr./Ms./Dr. [Guardian's Full Name]</h3>
-                    <h4>[Guardian's Title, e.g., Patron, Chief Mentor]</h4>
+                    <h3>Fr.Joseph Kallarackal</h3>
+                    <h4>Guardian</h4>
                     <!-- *** REPLACE with actual Description *** -->
-                    <p>With profound wisdom and unwavering dedication, [Guardian's Name] serves as the guiding light for the Kallarackal Family Trust. Their lifelong commitment to [mention key areas like philanthropy, community service, ethical values] has been instrumental in shaping the Trust's mission and ensuring its enduring legacy.</p>
-                    <p>[Add another paragraph describing their role, vision, or contribution to the trust...]</p>
+                    <!-- Added 'malayalam-font' class and adjusted line-height for better readability -->
+                    <p class="malayalam-font">അഗാധമായ ജ്ഞാനത്തോടും അചഞ്ചലമായ അർപ്പണബോധത്തോടും കൂടി, കല്ലറയ്ക്കൽ ഫാമിലി ട്രസ്റ്റിന്റെ വഴികാട്ടിയായി Fr.Joseph Kallarackal പ്രവർത്തിക്കുന്നു. പരോപകാരം
+, കമ്മ്യൂണിറ്റി സേവനം, ധാർമ്മിക മൂല്യങ്ങൾ എന്നിവ പോലുള്ള പ്രധാന മേഖലകൾ എന്നിവയിലുള്ള അവരുടെ ആജീവനാന്ത പ്രതിബദ്ധത ട്രസ്റ്റിന്റെ ദൗത്യത്തെ രൂപപ്പെടുത്തുന്നതിനും അതിന്റെ ശാശ്വതമായ പാരമ്പര്യം ഉറപ്പാക്കുന്നതിനും നിർണായക പങ്ക് വഹിച്ചിട്ടുണ്ട്.</p>
                     <!-- Optional: Add a prominent quote -->
                     <blockquote>
-                        <p>"[Insert a significant quote from the Guardian about the trust's purpose or values...]"</p>
+                        
                     </blockquote>
                 </div>
             </div>
@@ -197,51 +196,80 @@
                  <!-- Add initial animation class -->
                 <h2 class="reveal-bottom-initial">Our Officials</h2>
                  <!-- Grid ID for JS staggering -->
+                <!-- Grid ID for JS staggering -->
                 <div class="officials-grid" id="officialsGrid">
-                    <!-- Add initial animation class to each card for staggering -->
                     <div class="official-card reveal-scale-initial">
                          <!-- *** REPLACE image path, name, designation, quote *** -->
-                        <img src="images/official-1.jpg" alt="[Official 1 Name]">
-                        <h3>Mr./Ms. [Official 1 Full Name]</h3>
-                        <h4>[Designation, e.g., Chairman]</h4>
-                        <p>"[Insert a brief, impactful quote from Official 1 about the trust's vision or their role...]"</p>
+                        <img src="images/WhatsApp Image 2025-09-05 at 11.54.16_a608f170.jpg" alt="[Official 1 Name]">
+                        <h3>Mr.Joji Varghese</h3>
+                        <h4>President</h4>
+                        
                     </div>
                     <div class="official-card reveal-scale-initial">
                          <!-- *** REPLACE image path, name, designation, quote *** -->
-                        <img src="images/official-2.jpg" alt="[Official 2 Name]">
-                        <h3>Mr./Ms. [Official 2 Full Name]</h3>
-                        <h4>[Designation, e.g., Secretary]</h4>
-                        <p>"[Insert a brief, impactful quote from Official 2...]"</p>
+                        <img src="images/WhatsApp Image 2025-09-05 at 12.17.36_99d9bbdc.jpg" alt="[Official 2 Name]">
+                        <h3>Mr.Sibeesh J Kallarackal</h3>
+                        <h4>Secretary</h4>
+                       
                     </div>
                     <div class="official-card reveal-scale-initial">
                          <!-- *** REPLACE image path, name, designation, quote *** -->
-                        <img src="images/official-3.jpg" alt="[Official 3 Name]">
-                        <h3>Mr./Ms./Dr. [Official 3 Full Name]</h3>
-                        <h4>[Designation, e.g., Treasurer]</h4>
-                        <p>"[Insert a brief, impactful quote from Official 3...]"</p>
+                        <img src="images/WhatsApp Image 2025-09-05 at 11.50.40_8ad37058.jpg" alt="[Official 3 Name]">
+                        <h3>Mr.Shibu Sebastain</h3>
+                        <h4>Treasurer</h4>
+                        
                     </div>
+                </div>
+                <div class="officials-row-2">
                     <div class="official-card reveal-scale-initial">
                          <!-- *** REPLACE image path, name, designation, quote *** -->
-                        <img src="images/official-4.jpg" alt="[Official 4 Name]">
-                        <h3>Mr./Ms. [Official 4 Full Name]</h3>
-                        <h4>[Designation, e.g., Trustee]</h4>
-                        <p>"[Insert a brief, impactful quote from Official 4...]"</p>
+                        <img src="images/WhatsApp Image 2025-09-05 at 12.13.24_a3bb4c84.jpg" alt="[Official 4 Name]">
+                        <h3>Mrs.Jesmy Jomon</h3>
+                        <h4>Vice President</h4>
+                        
                     </div>
                      <div class="official-card reveal-scale-initial">
                           <!-- *** REPLACE image path, name, designation, quote *** -->
-                        <img src="images/official-5.jpg" alt="[Official 5 Name]">
-                        <h3>Mr./Ms. [Official 5 Full Name]</h3>
-                        <h4>[Designation, e.g., Trustee]</h4>
-                        <p>"[Insert a brief, impactful quote from Official 5...]"</p>
+                        <img src="images/WhatsApp Image 2025-09-05 at 12.21.29_3f3e6e3a.jpg" alt="[Official 5 Name]">
+                        <h3>Mrs.Bini Paulson</h3>
+                        <h4>Joint Secretary</h4>
+                        
                     </div>
-                     <div class="official-card reveal-scale-initial">
-                          <!-- *** REPLACE image path, name, designation, quote *** -->
-                        <img src="images/official-6.jpg" alt="[Official 6 Name]">
-                        <h3>Mr./Ms./Adv. [Official 6 Full Name]</h3>
-                        <h4>[Designation, e.g., Trustee / Advisor]</h4>
-                        <p>"[Insert a brief, impactful quote from Official 6...]"</p>
+                </div>
+                <div class="container">
+                    <h2 class="reveal-bottom-initial">Executive committee Members</h2>
+                    <div class="additional-officials-list">
+                        <div class="additional-official">
+                            <p class="name">Mr.Shibu Devasykutty</p>
+                        </div>
+                        <div class="additional-official">
+                            <p class="name">Mr.K O Joy</p>
+                        </div>
+                        <div class="additional-official">
+                            <p class="name">Mr.Reji Lazar</p>
+                        </div>
+                        <div class="additional-official">
+                            <p class="name">Mr.Shanju Varghese</p>
+                        </div>
+                        <div class="additional-official">
+                            <p class="name">Mr.Auntu K A</p>
+                        </div>
+                        <div class="additional-official">
+                            <p class="name">Mr.K V Antony</p>
+                        </div>
+                        <div class="additional-official">
+                            <p class="name">Mr.K O Thomas</p>
+                        </div>
+                        <div class="additional-official">
+                            <p class="name">Mr.K O Antu</p>
+                        </div>
+                        <div class="additional-official">
+                            <p class="name">Mrs.Shymol Tomy</p>
+                        </div>
+                        <div class="additional-official">
+                            <p class="name">Mrs.Preetha Benny</p>
+                        </div>
                     </div>
-                    <!-- Repeat structure for all 6 officials -->
                 </div>
             </div>
         </section>
@@ -260,22 +288,22 @@
                     <div class="gallery-row-inner">
                         <!-- Images for Row 1 - These will be duplicated by JS -->
                         <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-1.jpeg" alt="Gallery Image 1: Description">
+                            <img src="images/gallery/1.jpg" alt="Gallery Image 1: Description">
                         </div>
                         <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-2.jpg" alt="Gallery Image 2: Description">
+                            <img src="images/gallery/2.jpg" alt="Gallery Image 2: Description">
                         </div>
                         <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-3.jpg" alt="Gallery Image 3: Description">
+                            <img src="images/gallery/3..jpg" alt="Gallery Image 3: Description">
                         </div>
                         <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-4.jpg" alt="Gallery Image 4: Description">
+                            <img src="images/gallery/4.jpg" alt="Gallery Image 4: Description">
                         </div>
                          <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-extra-1.jpg" alt="Gallery Image Extra 1: Description">
+                            <img src="images/gallery/5.jpg" alt="Gallery Image Extra 1: Description">
                         </div>
                          <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-extra-2.jpg" alt="Gallery Image Extra 2: Description">
+                            <img src="images/gallery/6..jpg" alt="Gallery Image Extra 2: Description">
                         </div>
                         <!-- Add more unique images for row 1 as needed -->
                     </div>
@@ -287,22 +315,22 @@
                     <div class="gallery-row-inner reverse-scroll">
                         <!-- Images for Row 2 - These will be duplicated by JS -->
                          <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-5.jpg" alt="Gallery Image 5: Description">
+                            <img src="images/gallery/5.jpg" alt="Gallery Image 5: Description">
                         </div>
                          <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-6.jpg" alt="Gallery Image 6: Description">
+                            <img src="images/gallery/6..jpg" alt="Gallery Image 6: Description">
                         </div>
                          <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-7.jpg" alt="Gallery Image 7: Description">
+                            <img src="images/gallery/7.jpg" alt="Gallery Image 7: Description">
                         </div>
                          <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-8.jpg" alt="Gallery Image 8: Description">
+                            <img src="images/gallery/8.jpg" alt="Gallery Image 8: Description">
                         </div>
                         <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-extra-3.jpg" alt="Gallery Image Extra 3: Description">
+                            <img src="images/gallery/9.jpg" alt="Gallery Image Extra 3: Description">
                         </div>
                         <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-extra-4.jpg" alt="Gallery Image Extra 4: Description">
+                            <img src="images/gallery/10.jpg" alt="Gallery Image Extra 4: Description">
                         </div>
                          <!-- Add more unique images for row 2 as needed -->
                     </div>
@@ -313,22 +341,22 @@
                     <div class="gallery-row-inner">
                         <!-- Images for Row 3 - These will be duplicated by JS -->
                          <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-extra-5.jpg" alt="Gallery Image Extra 5: Description">
+                            <img src="images/gallery/11.jpg" alt="Gallery Image Extra 5: Description">
                         </div>
                          <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-extra-6.jpg" alt="Gallery Image Extra 6: Description">
+                            <img src="images/gallery/2.jpg" alt="Gallery Image Extra 6: Description">
                         </div>
                          <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-extra-7.jpg" alt="Gallery Image Extra 7: Description">
+                            <img src="images/gallery/7.jpg" alt="Gallery Image Extra 7: Description">
                         </div>
                          <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-extra-8.jpg" alt="Gallery Image Extra 8: Description">
+                            <img src="images/gallery/8.jpg" alt="Gallery Image Extra 8: Description">
                         </div>
                          <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-9.jpg" alt="Gallery Image 9: Description">
+                            <img src="images/gallery/9.jpg" alt="Gallery Image 9: Description">
                         </div>
                          <div class="gallery-scroll-item">
-                            <img src="images/gallery/gallery-10.jpg" alt="Gallery Image 10: Description">
+                            <img src="images/gallery/1.jpg" alt="Gallery Image 10: Description">
                         </div>
                          <!-- Add more unique images for row 3 as needed -->
                     </div>
@@ -373,7 +401,7 @@
                     <p>
                         <i class="fas fa-map-marker-alt"></i>
                          <!-- *** REPLACE with actual Address or remove if not needed *** -->
-                        <span>[Optional: Trust Office Address, City, State, Pin Code]</span>
+                        <span>Elavoor Pin Code: 683572</span>
                     </p>
                     <p>
                         <i class="fas fa-phone"></i>

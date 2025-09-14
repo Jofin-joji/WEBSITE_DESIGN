@@ -1,0 +1,14 @@
+FamilyID,MemberName,DateOfBirth,CurrentStatus,ProfileImageURL
+1,varghese,12-01-1947,farmer,
+1,joji varghese,17-07-1987,farmer,
+1,joby  joji,27-09-1992,bank employee,
+1,jofin joji,03-07-2004,student,images/jofin_joji.jpg
+1,joshua joji,01-11-2006,student,
+1,rosy varghese,25-12-1952,house wife,
+,,,,
+2,varghese,12-01-1947,farmer,
+2,joji varghese,17-07-1987,farmer,
+2,joby  joji,27-09-1992,bank employee,
+2,jofin ,03-07-2004,student,
+2,joshua joji,01-11-2006,student,
+2,rosy varghese,25-12-1952,house wife,
